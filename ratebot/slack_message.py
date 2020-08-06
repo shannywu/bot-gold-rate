@@ -1,10 +1,11 @@
 import json
+import os
 import requests
 
 
 class SlackMessage:
     def __init__(self):
-        self.webhook_url = 'https://hooks.slack.com/services/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'
+        self.webhook_url = os.environ['SLACK_WEBHOOK_URL']
 
     def send_message(self, text):
         message = {'text': text}
